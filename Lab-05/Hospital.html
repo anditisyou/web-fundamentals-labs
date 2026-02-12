@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SHINE Hospital Map</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin:0;
+            text-align:center;
+            background:#f4f8fb;
+        }
+        header{
+            text-align:center;
+            padding:20px;
+            background:#00454e;
+            color:rgb(255, 255, 255);
+        }
+        header p{
+            margin-top:0px;
+            color:rgb(163, 255, 177);
+        }
+        h1{
+            margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>SHINE</h1>
+    <p>"Hospital for all. Your Health, Our Promise."<p>
+</header>
+
+<!-- Hospital Image -->
+<img src="shine-hospital.png" usemap="#hospitalmap" width="1526" height="810" alt="SHINE Hospital Map">
+
+<!-- Image Map -->
+<map name="hospitalmap">
+
+    <!-- OPD (Rectangle) -->
+    <area shape="rect"
+          coords="355,554,546,602"
+          href="opd.html"
+          alt="Outpatient Department" target="_blank">
+
+    <!-- Diagnostic Lab (Circle) -->
+    <area shape="circle"
+          coords="229,380,100"
+          href="lab.html"
+          alt="Diagnostic Lab" target="_blank">
+
+    <!-- Emergency Zone (Polygon) -->
+    <area shape="poly"
+          coords="1030,247,1255,221,1214,315,1088,331"
+          href="emergency.html"
+          alt="Emergency Zone" target="_blank">
+
+</map>
+
+</body>
+</html>

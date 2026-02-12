@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BMI Calculator</title>
+
+<style>
+    body {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    form {
+        background-color: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        text-align: center;
+        width: 300px;
+    }
+
+    input[type="number"] {
+        width: 90%;
+        padding: 10px;
+        margin: 8px 0;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: right;
+    }
+
+    input[type="button"] {
+        padding: 10px 20px;
+        border-radius: 6px;
+        border: none;
+        background-color: #000;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: 0.3s;
+    }
+
+    input[type="button"]:hover {
+        opacity: 0.8;
+    }
+
+    /* Hide default radio */
+    input[type="radio"] {
+        display: none;
+    }
+
+    /* Custom radio button style */
+    .radio-group {
+        margin: 10px 0;
+    }
+
+    .radio-group label {
+        display: inline-block;
+        padding: 8px 18px;
+        border: 2px solid black;
+        border-radius: 25px;
+        cursor: pointer;
+        margin: 5px;
+        transition: 0.3s;
+    }
+
+    input[type="radio"]:checked + label {
+        background-color: black;
+        color: white;
+    }
+
+    h2 {
+        margin-top: 20px;
+        min-height: 30px;
+    }
+</style>
+</head>
+
+<body>
+
+<form>
+    <h1>BMI-CALCULATOR</h1>
+
+    <label>Weight (kg)</label><br>
+    <input type="number" id="weight"><br>
+
+    <label>Height (cm)</label><br>
+    <input type="number" id="height"><br>
+
+    <label><b>Gender</b></label>
+    <div class="radio-group">
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label>
+    </div>
+
+    <input type="button" value="Calculate BMI" onclick="calculateBMI()">
+
+    <h2 id="result"></h2>
+</form>
+
+<script>
+function calculateBMI() {
+    var weight = parseFloat(document.getElementById("weight").value);
+    var height = parseFloat(document.getElementById("height").value);
+    var genderRadio = document.querySelector('input[name="gender"]:checked');
+
+    if (!genderRadio) {
+        document.getElementById("result").innerText = "Please select gender.";
+        return;
+    }
+
+    if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+        document.getElementById("result").innerText =
+        "Please enter valid weight and height.";
+        return;
+    }
+
+    var gender = genderRadio.value;
+
+    height = height / 100;
+    var bmi = weight / (height * height);
+    var bmiValue = bmi;
+    bmi = bmi.toFixed(2);
+
+    var category = "";
+
+    if (bmiValue < 18.5) {
+        category = "Underweight";
+    } else if (bmiValue < 24.9) {
+        category = "Normal weight";
+    } else if (bmiValue < 29.9) {
+        category = "Overweight";
+    } else {
+        category = "Obese";
+    }
+
+    document.getElementById("result").innerText =
+        "Your BMI is " + bmi + " (" + category + ") - Gender: " + gender;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int arrange(string str){
+    int n = sizeof(str);
+    vector<int>st(26,0);
+    for (char &chr : str) {
+        st[chr-97]++;
+    }
+    int min = 2147483647;
+    for(int i=0;i<26;i++){
+        if(min>st[i] && st[i]!=0){
+            min=st[i];
+        }
+    }
+    return min;
+}
+int main() {
+    string str;
+    cin>>str;
+    cout<<arrange(str);
+    return 0;
+}
