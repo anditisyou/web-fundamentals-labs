@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdmitCard</title>
+    <style>
+        body {
+            text-align: left;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            border: black solid 1px;
+            width: 80%;
+            margin: 0 auto;
+        }
+        #geu-image {
+            display: block;
+            margin-top : 20px;
+            margin-left: 100px;
+            position: absolute;
+            text-align: left;
+        }
+        .container header {
+            text-align: center;
+            margin-left: 500px ;
+            padding: 20px 0;
+        }
+        .profile_img {
+            float: right; 
+            margin-right: 150px;
+            text-align: center;
+        }
+        .candidate-info {
+            text-align: left;
+            width: 80%;
+            margin: 0 auto;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .notes {
+            margin-top: 20px;
+            text-align: left;
+            width: 80%;
+            margin: 20px auto;
+        }
+       .registrar {
+            border: solid 3px black;
+            margin-top: 80px;
+            margin-bottom: 50px;
+            text-align: center;
+            width: 150px;
+            margin-left: auto;   /* pushes it to right */
+        }
+        .options {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/logo.png" alt="GEU Logo" width="100">
+        <h1>Admit Card Portal</h1>
+    </header>
+    <hr>
+    <div class="container">
+        <img src="/image.png" id="geu-image" alt="GEU Logo" width="325">
+        <header>
+            <h2>ADMIT CARD</h2>
+            <p><b>END TERM EXAMINATION MAY 2026 </b></p>
+        </header>
+        <div class="profile_img">
+            <img src="/profile.png" alt="Candidate Photo" width="100" height="100">
+            <p><b>Student Signature:</b><br><br>________________________</p>
+        </div>
+        <div class="candidate-info">
+            <p><b>Name of candidate :</b> <span id="candidateName"></span> &emsp; <b>Program :</b> BACHLOR OF TECHNOLOGY &emsp; <b>Branch :</b> (CSE) With AI and DS &emsp; <br><br><br><b>Father's Name :</b> Shri Krishan Khandelwal &emsp; <b>Semester :</b> 5 &emsp; <b>Section :</b> DS-1 &emsp; <br><br><br><b>Student ID :</b> 23022258 &emsp; <b>Roll No. :</b> 2023942 &emsp; <b>Enrollment No. :</b> 232023942</p>
+        </div>
+        <br><br><br><br>
+        <table>
+            <tr>
+                <th>S.No.</th>
+                <th>Subject Type</th>
+                <th>Subject Code</th>
+                <th>Subject Nam</th>
+                <th>Exam Date</th>
+                <th>Exam Time</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Practical</td>
+                <td>PCS-563</td>
+                <td>Computer Programming Lab</td>
+                <td>2024-05-16</td>
+                <td>02:00 - 04:00 PM</td>
+                <td>Eligible</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Theory</td>
+                <td>TCS-562</td>
+                <td>Introduction to AI and DS</td>
+                <td>2024-05-15</td>
+                <td>10:00 - 12:00 AM</td>
+                <td>Eligible</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Theory</td>
+                <td>TCS-564</td>
+                <td>Data Structures and Algorithms</td>
+                <td>2024-05-17</td>
+                <td>10:00 - 12:00 AM</td>
+                <td>Eligible</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Theory</td>
+                <td>TCS-565</td>
+                <td>Database Management Systems</td>
+                <td>2024-05-18</td>
+                <td>02:00 - 04:00 PM</td>
+                <td>Not Eligible</td>
+            </tr>
+        </table>
+        <div class="notes">
+            <p><strong>Examination Center:</strong> GEU Main Campus, Dehradun</p>
+            <p><strong>Reporting Time:</strong> 30 minutes before the scheduled exam time</p>
+            <p><strong>Note:</strong> Please bring this admit card along with a valid photo ID to the examination center.</p>
+            <p><strong>For any discrepancies:</strong> Contact the examination department immediately.</p>
+        </div>
+        <div class="registrar" align="right">
+            <p><b>Registrar</b></p>
+        </div>
+    </div>
+    <div class="options">
+        <button onclick="window.print()">Print Admit Card</button>
+        <button onclick="window.close()">Close</button>
+    </div>
+    <script src = "script.js"></script>
+</body>
+</html>

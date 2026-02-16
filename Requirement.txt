@@ -1,0 +1,11 @@
+[13:22, 16/02/2026] Divya DS1: home page logo bg color 
+    registratin button 
+    alert welcome to reg portal
+    prompt name to be entered
+    confirm for Registration page 
+    new page admit card details (same like us) 
+    has option for print and close
+    hover for buttons
+[13:22, 16/02/2026] Divya DS1: name logo college
+    info of college
+    change theme button to apply various colors
